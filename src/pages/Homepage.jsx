@@ -8,7 +8,7 @@ function Homepage(){
     return (
         <div>
             <div>
-                <Link >
+                <Link to="/beers" >
                     <img src={allBeersImage} alt="all our beers" height="200" />
                     <h2>Check out All our Beers</h2>
                     <p>Our collection of wonderful beers offers you the chance to get to know the
