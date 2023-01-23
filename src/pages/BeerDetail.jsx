@@ -11,17 +11,12 @@ function BeerDetail () {
     
 
     useEffect(() => {
-        //const beerAPI = `https://ih-beers-api2.herokuapp.com/beers/${id}`
         axios
         .get(`https://ih-beers-api2.herokuapp.com/beers/${id}`)
         .then((beer) => {
             console.log(beer.data)
             setOneBeer(beer.data)
             })
-
-            // if (selectedBeer) {
-            //     setOneBeer(selectedBeer)
-            // }
     }, [id])
 
     return (
