@@ -5,25 +5,24 @@ import axios from 'axios';
 
 function BeerDetail () {
     const [oneBeer, setOneBeer] = useState(null);
-    const { beerId } = useParams();
+    const { id } = useParams();
 
     const beerNotFoundImage = "https://images.unsplash.com/photo-1539788292313-547a2c372229?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZHJ1bmt8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60";
     
 
     useEffect(() => {
+        //const beerAPI = `https://ih-beers-api2.herokuapp.com/beers/${id}`
         axios
-        .get("https://ih-beers-api2.herokuapp.com/beers")
-        .then((response) => {
-            console.log(response.data)
-            let selectedBeer = response.find((beer) => {
-                return beer._id === beerId
+        .get(`https://ih-beers-api2.herokuapp.com/beers/${id}`)
+        .then((beer) => {
+            console.log(beer.data)
+            setOneBeer(beer.data)
             })
 
-            if (selectedBeer) {
-                setOneBeer(selectedBeer)
-            }
-        });
-    }, [beerId])
+            // if (selectedBeer) {
+            //     setOneBeer(selectedBeer)
+            // }
+    }, [id])
 
     return (
         <div>
