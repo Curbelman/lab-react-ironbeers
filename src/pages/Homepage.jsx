@@ -19,7 +19,7 @@ function Homepage(){
                     <h2>Check out a Random Beer</h2>
                     <p>Don't know exactly what you want? Feeling adventurous? Dive in to a random beer from our collection!</p>
                 </Link>
-                <Link >
+                <Link to="/new-beer" >
                     <img src={newBeerImage} alt="new beers" height="200" />
                     <h2>Add a New Beer to our catalogue</h2>
                     <p>Can't find a beer that you want to recommend? Add it here to our list, and we'll showcase it to the world!</p>
